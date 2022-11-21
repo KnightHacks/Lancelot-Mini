@@ -68,7 +68,7 @@ You should now be able to start your bot. Happy developing!
 
 </details>
 
-References for you:
+### References for you:
 
 Getting started guide: https://discordjs.guide/#before-you-begin
 
