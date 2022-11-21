@@ -1,0 +1,19 @@
+{
+	"name": "lancelot",
+	"version": "1.0.0",
+	"description": "The Knight Hacks Discord bot.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KnightHacks/Lancelot.git"
+	},
+	"author": "Knight Hacks",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/KnightHacks/Lancelot/issues"
+	},
+	"homepage": "https://github.com/KnightHacks/Lancelot#readme"
+}
