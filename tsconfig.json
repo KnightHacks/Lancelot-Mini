@@ -1,14 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "es2020",
+		"target": "ESNext",
 		"module": "commonjs",
 		"allowJs": true,
-		"watch": false,
-		"lib": ["dom", "es2020"],
-		"outDir": "./src/build/",
+		"outDir": "./dist/",
 		"resolveJsonModule": true,
 		"esModuleInterop": true
 	},
-	"types": ["chrome"],
-	"include": ["./src/*", "src/deploy-commands.ts"]
+	"include": ["./src/*"],
+	"exclude": ["node_modules", "dist"]
 }
