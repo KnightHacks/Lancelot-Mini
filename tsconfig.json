@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "commonjs",
+		"allowJs": true,
+		"watch": false,
+		"lib": ["dom", "es2020"],
+		"outDir": "./src/build/",
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	},
+	"types": ["chrome"],
+	"include": ["./src/*", "src/deploy-commands.ts"]
+}

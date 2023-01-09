@@ -1,13 +1,15 @@
 {
-	"name": "lancelot",
+	"name": "lancelot-mini",
 	"version": "1.0.0",
 	"description": "The Knight Hacks Discord bot.",
-	"main": "index.js",
+	"main": "./src/build/index.js",
 	"engines": {
-		"node": ">=18 <19"
+		"node": ">=18"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node .",
+		"build": "tsc",
+		"postinstall": "npm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -18,5 +20,15 @@
 	"bugs": {
 		"url": "https://github.com/KnightHacks/Lancelot/issues"
 	},
-	"homepage": "https://github.com/KnightHacks/Lancelot#readme"
+	"homepage": "https://github.com/KnightHacks/Lancelot#readme",
+	"dependencies": {
+		"discord-api-types": "^0.37.26",
+		"discord.js": "^14.7.1",
+		"dotenv": "^16.0.3",
+		"typescript": "^4.9.4"
+	},
+	"devDependencies": {
+		"@discordjs/builders": "^1.4.0",
+		"@discordjs/rest": "^1.5.0"
+	}
 }
