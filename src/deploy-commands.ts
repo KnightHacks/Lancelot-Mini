@@ -5,8 +5,6 @@ import Command from "./util/command";
 
 export async function deployCommands(): Promise<Command[]> {
 	const commands = getCommands();
-	console.log(commands);
-
 	const rest = new REST().setToken(process.env.TOKEN!);
 
 	try {

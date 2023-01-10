@@ -1,13 +1,26 @@
-import { CommandInteraction, SlashCommandBuilder } from "discord.js";
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import { createRolesMenu } from "../util/rolesAndMajorsMenu";
 
 const data = new SlashCommandBuilder()
-	.setName("testing")
-	.setDescription("Provides information about the user.");
-
-async function execute(interaction: CommandInteraction) {
-	await interaction.reply(
-		`This command was run by ${interaction.user.username}, who joined on ${interaction.user.createdAt}.`
+	.setName("roles")
+	.setDescription("Add or remove roles from your account.")
+	.addStringOption((option) =>
+		option
+			.setName("action")
+			.setDescription("Whether to add or remove roles.")
+			.setRequired(true)
+			.addChoices(
+				{ name: "Add", value: "Add" },
+				{ name: "Remove", value: "Remove" }
+			)
 	);
+
+async function execute(interaction: ChatInputCommandInteraction) {
+	const type = interaction.options.getString("action") ?? "add";
+	await interaction.reply({
+		content: `Select Roles to ${type}!`,
+		components: [createRolesMenu(type)],
+	});
 }
 
 export { data, execute };
