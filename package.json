@@ -2,7 +2,7 @@
 	"name": "lancelot-mini",
 	"version": "1.0.0",
 	"description": "The Knight Hacks Discord bot.",
-	"main": "./src/build/index.js",
+	"main": "./dist/index.js",
 	"engines": {
 		"node": ">=18"
 	},

@@ -10,8 +10,8 @@ const data = new SlashCommandBuilder()
 			.setDescription("Whether to add or remove roles.")
 			.setRequired(true)
 			.addChoices(
-				{ name: "Add", value: "Add" },
-				{ name: "Remove", value: "Remove" }
+				{ name: "add", value: "add" },
+				{ name: "remove", value: "remove" }
 			)
 	);
 

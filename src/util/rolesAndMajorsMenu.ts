@@ -4,7 +4,7 @@ import {
 	StringSelectMenuOptionBuilder,
 } from "@discordjs/builders";
 
-const roles = [
+export const roles = [
 	{
 		label: "OPS",
 		value: "OPS",
@@ -103,7 +103,7 @@ const roles = [
 	},
 ];
 
-const majors = [
+export const majors = [
 	"Computer Science",
 	"Computer Engineering",
 	"Information Technology",
@@ -132,6 +132,8 @@ export function createRolesMenu(
 		new StringSelectMenuBuilder()
 			.setCustomId(type + "Role")
 			.setPlaceholder("Nothing selected")
+			.setMinValues(1)
+			.setMaxValues(10)
 			.addOptions(
 				roles.map((role) => {
 					return new StringSelectMenuOptionBuilder()
@@ -143,27 +145,3 @@ export function createRolesMenu(
 			)
 	);
 }
-
-/*
-
-  await interaction.deferReply({ ephemeral: true });
-  const member: GuildMember = interaction.member as GuildMember;
-  const { values: roleNames } = interaction;
-  const roles: Role[] = roleNames
-    .map((roleName) => {
-      const role = getRole(member.guild, roleName);
-      if (!role) console.log(`Role lookup for ${roleName} failed!`);
-      return role;
-    })
-    .filter((role): role is Role => !!role);
-
-  if (action === 'add') {
-    roles.forEach((role) => member.roles.add(role));
-  } else {
-    roles.forEach((role) => member.roles.remove(role));
-  }
-  const successMsg = action === 'add' ? 'added' : 'removed';
-  await interaction.editReply({
-    content: `Successfully ${successMsg} selected roles.`,
-  });
-*/

@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 
 import { deployCommands } from "./deploy-commands";
 import Command from "./util/command";
+import { handleChatInputCommandInteraction } from "./interactionListeners/chatInputCommand";
+import { handleStringSelectMenuInteraction } from "./interactionListeners/stringSelectMenu";
 
 dotenv.config();
 const commands = new Collection<string, Command>();
@@ -30,27 +32,11 @@ client.once(Events.ClientReady, async (c) => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
-client.on(Events.InteractionCreate, async (interaction) => {
-	if (!interaction.isChatInputCommand()) return;
-
-	const command = commands.get(interaction.commandName);
-
-	if (!command) {
-		console.error(
-			`No command matching ${interaction.commandName} was found.`
-		);
-		return;
-	}
-
-	try {
-		command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		interaction.reply({
-			content: "There was an error while executing this command!",
-			ephemeral: true,
-		});
-	}
+client.on(Events.InteractionCreate, (interaction) => {
+	if (interaction.isChatInputCommand())
+		handleChatInputCommandInteraction(interaction, commands);
+	if (interaction.isStringSelectMenu())
+		handleStringSelectMenuInteraction(interaction);
 });
 
 client.login(process.env.TOKEN);
