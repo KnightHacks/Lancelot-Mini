@@ -145,3 +145,22 @@ export function createRolesMenu(
 			)
 	);
 }
+
+export function createMajorsMenu(
+	type: string
+): ActionRowBuilder<StringSelectMenuBuilder> {
+	return new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
+		new StringSelectMenuBuilder()
+			.setCustomId(type + "Major")
+			.setPlaceholder("Nothing selected")
+			.setMinValues(1)
+			.setMaxValues(5)
+			.addOptions(
+				majors.map((major) => {
+					return new StringSelectMenuOptionBuilder()
+						.setLabel(major)
+						.setValue(major);
+				})
+			)
+	);
+}

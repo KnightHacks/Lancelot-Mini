@@ -4,8 +4,8 @@ export async function handleStringSelectMenuInteraction(
 	interaction: StringSelectMenuInteraction
 ) {
 	if (
-		interaction.customId === "addRole" ||
-		interaction.customId === "removeRole"
+		interaction.customId.indexOf("Role") !== -1 ||
+		interaction.customId.indexOf("Major") !== -1
 	) {
 		await interaction.deferReply({ ephemeral: true });
 		const member: GuildMember = interaction.member as GuildMember;
@@ -20,7 +20,9 @@ export async function handleStringSelectMenuInteraction(
 			})
 			.filter((role): role is Role => !!role);
 
-		const addingRole = interaction.customId === "addRole" ? true : false;
+		const addingRole = interaction.customId.startsWith("add")
+			? true
+			: false;
 
 		roles.forEach((role) => {
 			try {
