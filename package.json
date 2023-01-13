@@ -9,7 +9,7 @@
 	"scripts": {
 		"start": "npm run start-dev",
 		"start-dev": "nodemon src/index.ts",
-		"start-prod": "node ./dist/index.js",
+		"start-prod": "npm run build && node ./dist/index.js",
 		"build": "npm run clean && tsc --build",
 		"clean": "tsc --build --clean"
 	},

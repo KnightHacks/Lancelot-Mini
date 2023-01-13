@@ -1,7 +1,6 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 import {
 	createMajorsMenu,
-	createRolesMenu,
 } from "../components/rolesAndMajorsMenu";
 
 const data = new SlashCommandBuilder()
