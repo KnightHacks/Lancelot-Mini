@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "commonjs",
+		"allowJs": true,
+		"outDir": "./dist/",
+		"resolveJsonModule": true,
+		"esModuleInterop": true
+	},
+	"include": ["./src/"],
+	"exclude": ["node_modules", "dist"]
+}
