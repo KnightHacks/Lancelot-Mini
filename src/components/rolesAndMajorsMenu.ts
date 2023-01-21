@@ -12,6 +12,16 @@ export const roles = [
 		emoji: "892851216072183868",
 	},
 	{
+		label: "Hack-A-Day Hacker",
+		value: "Hack-A-Day Hacker",
+		description: "Hacker participating in Hack-A-Day!",
+	},
+	{
+		label: "Hack-A-Day Volunteer",
+		value: "Hack-A-Day Volunteer",
+		description: "Hacker participating in Hack-A-Day!",
+	},
+	{
 		label: "Python",
 		value: "Python",
 		description: "The Python programming language.",
