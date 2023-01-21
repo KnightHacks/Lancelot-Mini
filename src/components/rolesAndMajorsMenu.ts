@@ -22,6 +22,21 @@ export const roles = [
 		description: "Hacker participating in Hack-A-Day!",
 	},
 	{
+		label: "Front End",
+		value: "Front End",
+		description: "Interest in front-end development.",
+	},
+	{
+		label: "Back End",
+		value: "Back End",
+		description: "Interest in back-end development.",
+	},
+	{
+		label: "Mobile",
+		value: "Mobile",
+		description: "Interest in mobile development.",
+	},
+	{
 		label: "Python",
 		value: "Python",
 		description: "The Python programming language.",
