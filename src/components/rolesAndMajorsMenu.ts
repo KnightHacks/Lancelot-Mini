@@ -15,26 +15,31 @@ export const roles = [
 		label: "Hack-A-Day Hacker",
 		value: "Hack-A-Day Hacker",
 		description: "Hacker participating in Hack-A-Day!",
+		emoji: "675761104995090455",
 	},
 	{
 		label: "Hack-A-Day Volunteer",
 		value: "Hack-A-Day Volunteer",
-		description: "Hacker participating in Hack-A-Day!",
+		description: "Volunteer participating in Hack-A-Day!",
+		emoji: "858018115895164968",
 	},
 	{
 		label: "Front End",
 		value: "Front End",
 		description: "Interest in front-end development.",
+		emoji: "626922021200068629",
 	},
 	{
 		label: "Back End",
 		value: "Back End",
 		description: "Interest in back-end development.",
+		emoji: "763212031846252565",
 	},
 	{
 		label: "Mobile",
 		value: "Mobile",
 		description: "Interest in mobile development.",
+		emoji: "763211784701083648",
 	},
 	{
 		label: "Python",
