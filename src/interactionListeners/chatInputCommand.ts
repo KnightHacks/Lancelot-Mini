@@ -14,14 +14,6 @@ export function handleChatInputCommandInteraction(
 		return;
 	}
 
-	if (interaction.channelId !== "623210523965652993") {
-		interaction.reply({
-			content: "Please use all bot commands in the bot-spam channel.",
-			ephemeral: true,
-		});
-		return;
-	}
-
 	try {
 		command.execute(interaction);
 	} catch (error) {
